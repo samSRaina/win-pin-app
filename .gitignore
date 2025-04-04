@@ -1,0 +1,25 @@
+.vs/
+# Build output
+bin/
+obj/
+debug/
+release/
+
+# Visual Studio/IDE settings
+*.user
+*.suo
+.vscode/
+.idea/
+
+# Temporary or cache files
+*.tmp
+*.bak
+*.log
+
+# Keep the important files
+!*.cs
+!*.csproj
+!*.sln
+!*.resx
+!*.Designer.cs
+!Properties/
