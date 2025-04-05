@@ -1,3 +1,5 @@
+using WindowPinnerApp.Services;
+
 namespace WindowPinnerApp
 {
     internal static class Program

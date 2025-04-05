@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btnUnpnAll = new Button();
             SuspendLayout();
+            // 
+            // btnUnpnAll
+            // 
+            btnUnpnAll.Location = new Point(43, 35);
+            btnUnpnAll.Name = "btnUnpnAll";
+            btnUnpnAll.Size = new Size(142, 23);
+            btnUnpnAll.TabIndex = 0;
+            btnUnpnAll.Text = "Unpin All ";
+            btnUnpnAll.UseVisualStyleBackColor = true;
+            btnUnpnAll.Click += btnUnpnAll_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(512, 182);
+            Controls.Add(btnUnpnAll);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnUnpnAll;
     }
 }
