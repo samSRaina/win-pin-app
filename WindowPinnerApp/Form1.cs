@@ -2,6 +2,9 @@
 using System.Diagnostics;
 using WindowPinnerApp.Services;
 using WindowPinnerApp.UI;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using System.Text;
 
 
 
@@ -52,7 +55,7 @@ namespace WindowPinnerApp
             toolbarManager?.Dispose();
             WindowManager.UnpinAllWindows();
             //MouseHook.stop();
-            
+
             base.OnFormClosed(e);
         }
         protected override void WndProc(ref Message m)
@@ -80,5 +83,33 @@ namespace WindowPinnerApp
             base.OnFormClosing(e);
         }
 
+        private void ListWindowsButton_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear(); // assuming you added a ListBox named listBox1
+
+            WinLister.EnumWindows((hWnd, lParam) =>
+            {
+                if (!WinLister.IsWindowVisible(hWnd)) return true;
+
+                int length = WinLister.GetWindowTextLength(hWnd);
+                if (length == 0) return true;
+
+                StringBuilder builder = new StringBuilder(length + 1);
+                WinLister.GetWindowText(hWnd, builder, builder.Capacity);
+
+                string title = builder.ToString();
+                if (!string.IsNullOrWhiteSpace(title))
+                {
+                    listBox1.Items.Add(title); // OR Console.WriteLine(title);
+                }
+
+                return true;
+            }, IntPtr.Zero);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

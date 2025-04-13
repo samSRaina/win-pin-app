@@ -17,7 +17,7 @@ namespace WindowPinnerApp.Services
 
         private List<IntPtr> pinnedWindows = new List<IntPtr>();
 
-        public void TogglePinUnderCursor()
+        public void TogglePinUnderCursor()//had to make public to be accessible by UI logic
         {
             IntPtr hWnd = GetWindowUnderCursor();
             if(hWnd == IntPtr.Zero)

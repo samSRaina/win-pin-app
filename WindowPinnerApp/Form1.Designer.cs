@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             btnUnpnAll = new Button();
+            button1 = new Button();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // btnUnpnAll
             // 
-            btnUnpnAll.Location = new Point(43, 35);
+            btnUnpnAll.Location = new Point(317, 52);
             btnUnpnAll.Name = "btnUnpnAll";
             btnUnpnAll.Size = new Size(142, 23);
             btnUnpnAll.TabIndex = 0;
@@ -41,11 +43,33 @@
             btnUnpnAll.UseVisualStyleBackColor = true;
             btnUnpnAll.Click += btnUnpnAll_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(62, 52);
+            button1.Name = "button1";
+            button1.Size = new Size(108, 23);
+            button1.TabIndex = 1;
+            button1.Text = "List Windows";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += ListWindowsButton_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(62, 99);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(210, 319);
+            listBox1.TabIndex = 2;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(512, 182);
+            ClientSize = new Size(501, 530);
+            Controls.Add(listBox1);
+            Controls.Add(button1);
             Controls.Add(btnUnpnAll);
             Name = "Form1";
             Text = "Form1";
@@ -55,5 +79,7 @@
         #endregion
 
         private Button btnUnpnAll;
+        private Button button1;
+        private ListBox listBox1;
     }
 }
